@@ -1,0 +1,224 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullname": "Sonya Christina",
+      "username": "sonsonya",
+      "email": "sonya@mail.com",
+      "password": "sonya",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Propoelix™ (200 mg)",
+      "volume": "30 vegekaps",
+      "price": "389.000",
+      "image": "https://www.hdistore.com/img/product/P01003.jpg",
+      "category": "PROPOELIX™"
+    },
+    {
+      "id": 2,
+      "name": "Propoelix™ (200 mg)",
+      "volume": "60 vegekaps",
+      "price": "719.000",
+      "image": "https://www.hdistore.com/img/product/P01004.jpg",
+      "category": "PROPOELIX™"
+    },
+    {
+      "id": 3,
+      "name": "Propoelix™ Plus",
+      "volume": "60 vegekaps",
+      "price": "819.000",
+      "image": "https://www.hdistore.com/img/product/P01005.jpg",
+      "category": "PROPOELIX™"
+    },
+    {
+      "id": 4,
+      "name": "Bee Propolis",
+      "volume": "60 tablet",
+      "price": "359.000",
+      "image": "https://www.hdistore.com/img/product/B01001.jpg",
+      "category": "HDI ORIGINS™"
+    },
+    {
+      "id": 5,
+      "name": "Pollenergy 520",
+      "volume": "90 tablet",
+      "price": "289.000",
+      "image": "https://www.hdistore.com/img/product/P01001.jpg",
+      "category": "HDI ORIGINS™"
+    },
+    {
+      "id": 6,
+      "name": "Royal Jelly 150 mg",
+      "volume": "60 tablet",
+      "price": "299.000",
+      "image": "https://www.hdistore.com/img/product/R01001.jpg",
+      "category": "HDI ORIGINS™"
+    },
+    {
+      "id": 7,
+      "name": "Royale Jelly Liquid",
+      "volume": "150 gr",
+      "price": "549.000",
+      "image": "https://www.hdistore.com/img/product/R01002.jpg",
+      "category": "HDI ORIGINS™"
+    },
+    {
+      "id": 8,
+      "name": "Clover Honey",
+      "volume": "0,25 kg",
+      "price": "229.000",
+      "image": "https://www.hdistore.com/img/product/C01011.jpg",
+      "category": "HDI NATURALS™"
+    },
+    {
+      "id": 9,
+      "name": "Clover Honey",
+      "volume": "0,5 kg",
+      "price": " 399.000",
+      "image": "https://www.hdistore.com/img/product/C01001.jpg",
+      "category": "HDI NATURALS™"
+    },
+    {
+      "id": 10,
+      "name": "Clover Honey",
+      "volume": "1 kg",
+      "price": " 689.000",
+      "image": "https://www.hdistore.com/img/product/C01002.jpg",
+      "category": "HDI NATURALS™"
+    },
+    {
+      "id": 11,
+      "name": "Proliz Lozenges Original",
+      "volume": "12 Loz./sachet",
+      "price": "49.000",
+      "image": "https://www.hdistore.com/img/product/P01006.jpg",
+      "category": "HDI NATURALS™"
+    },
+    {
+      "id": 12,
+      "name": "Proliz Lozenges Honey Lemon",
+      "volume": "12 Loz./sachet",
+      "price": "49.000",
+      "image": "https://www.hdistore.com/img/product/P01010.jpg",
+      "category": "HDI NATURALS™"
+    },
+    {
+      "id": 13,
+      "name": "Honeybee PollenS Chewable Tablet",
+      "volume": "60 tablet",
+      "price": "179.000",
+      "image": "https://www.hdistore.com/img/product/H01001a.jpg",
+      "category": "HDI KIDS"
+    },
+    {
+      "id": 14,
+      "name": "Kids 3",
+      "volume": "60 tablet",
+      "price": "299.000",
+      "image": "https://www.hdistore.com/img/product/K01001a.jpg",
+      "category": "HDI KIDS"
+    },
+    {
+      "id": 15,
+      "name": "Bee Ultra",
+      "volume": "60 kapsul",
+      "price": "469.000",
+      "image": "https://www.hdistore.com/img/product/B01037.jpg",
+      "category": "HDI"
+    },
+    {
+      "id": 16,
+      "name": "Trimee II",
+      "volume": "90 tablet",
+      "price": "319.000",
+      "image": "https://www.hdistore.com/img/product/1101.jpg",
+      "category": "HDI"
+    },
+    {
+      "id": 17,
+      "name": "Dynamic Trio Plus Enzymeminerals",
+      "volume": "30 kaplet",
+      "price": "269.000",
+      "image": "https://www.hdistore.com/img/product/1308.jpg",
+      "category": "HDI PLUS"
+    },
+    {
+      "id": 18,
+      "name": "Dynamic Trio Plus Enzymeminerals",
+      "volume": "90 kaplet",
+      "price": "589.000",
+      "image": "https://www.hdistore.com/img/product/1311.jpg",
+      "category": "HDI PLUS"
+    },
+    {
+      "id": 19,
+      "name": "Bee Botanics™ Aloe Propolis Cream with Honey Extract",
+      "volume": "36 gr / tube",
+      "price": "119.000",
+      "image": "https://www.hdistore.com/img/product/1235.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 20,
+      "name": "Bee Botanics™ Propolis Facial Wash Gel",
+      "volume": "250 gr/ botol",
+      "price": "189.000",
+      "image": "https://www.hdistore.com/img/product/F01009a.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 21,
+      "name": "Bee Botanics™ Propolis Mouthwash",
+      "volume": "250 ml / botol",
+      "price": "109.000",
+      "image": "https://www.hdistore.com/img/product/1218.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 22,
+      "name": "Bee Botanics™ Propolis Toothpaste",
+      "volume": "70 gr/ tube",
+      "price": "49.000",
+      "image": "https://www.hdistore.com/img/product/P01021.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 23,
+      "name": "Bee Botanics™ Propolis Hand & Body Lotion",
+      "volume": "240 ml / botol",
+      "price": "99.000",
+      "image": "https://www.hdistore.com/img/product/H01007a.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 24,
+      "name": "Bee Botanics™ Strengthening Shampoo with Royal Jelly",
+      "volume": "280 ml / botol",
+      "price": "309.000",
+      "image": "https://www.hdistore.com/img/product/S01001a.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 25,
+      "name": "Bee Botanics™ Leave-In Daily Serum with Royal Jelly",
+      "volume": "100 ml / botol spray",
+      "price": "589.000",
+      "image": "https://www.hdistore.com/img/product/L01001a.jpg",
+      "category": "BEE BOTANICS™"
+    },
+    {
+      "id": 26,
+      "name": "Bee Botanics™ Propolis Hygiene Wash",
+      "volume": "120 ml / botol",
+      "price": "119.000",
+      "image": "https://www.hdistore.com/img/product/H01010.jpg",
+      "category": "BEE BOTANICS™"
+    }
+  ],
+  "carts": [],
+  "transactions": []
+}
