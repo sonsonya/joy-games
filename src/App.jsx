@@ -27,18 +27,25 @@ class App extends React.Component {
   }
 
   render(){
+    if(this.props.user.storageIsChecked) {
+      return (
+        <BrowserRouter>
+        <MyNavbar></MyNavbar>
+          <Routes>
+            <Route element={<Home/>} path='/'/>
+            <Route element={<Login/>} path='/login'/>
+            <Route element={<Register/>} path='/register'/>
+            <Route element={<Products/>} path='/products'/>
+            <Route element={<Contact/>} path='/contact'/>
+          </Routes>
+        </BrowserRouter>
+      )
+    }
+    
     return (
-      <BrowserRouter>
-      <MyNavbar></MyNavbar>
-        <Routes>
-          <Route element={<Home/>} path='/'/>
-          <Route element={<Login/>} path='/login'/>
-          <Route element={<Register/>} path='/register'/>
-          <Route element={<Products/>} path='/products'/>
-          <Route element={<Contact/>} path='/contact'/>
-        </Routes>
-      </BrowserRouter>
-      
+      <div>
+        Loading..
+      </div>
     )
   }
 }

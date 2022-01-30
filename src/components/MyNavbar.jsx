@@ -1,14 +1,11 @@
-import React, { useReducer } from 'react'
-import { Navbar, NavDropdown, Nav, Container, Button } from 'react-bootstrap'
+import React from 'react'
+import { Navbar, Nav, Container, Button, Dropdown } from 'react-bootstrap'
 import { logoutUser } from '../redux/actions/user'
 import { connect } from 'react-redux'
 
 class MyNavbar extends React.Component {
 
     render () {
-        if(this.props.register.fullname){
-            
-        }
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -34,7 +31,16 @@ class MyNavbar extends React.Component {
                                 <Navbar.Text style={{ margin: '0px 20px'}}>
                                     Hallo, {this.props.register.fullname}
                                 </Navbar.Text>
-                                <Button onClick={this.props.logoutUser} variant="danger">Log Out</Button>
+                                <Dropdown>
+                                <Dropdown.Toggle variant="danger" id="dropdown-basic">
+                                    Menu
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Cart</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">History</Dropdown.Item>
+                                    <Dropdown.Item onClick={this.props.logoutUser}>Log Out</Dropdown.Item>
+                                </Dropdown.Menu>
+                                </Dropdown>
                                 </> :
                                 <>
                                 <Nav.Link href="/products">Katalog</Nav.Link>

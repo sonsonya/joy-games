@@ -1,7 +1,6 @@
 import React from 'react'
 import {Container, Row, Col, Form, Button, Card} from 'react-bootstrap'
-import Axios from 'axios'
-import { API_URL } from '../../constans/API.js'
+import { Navigate } from 'react-router-dom'
 import { registerUser } from '../../redux/actions/user'
 import { connect } from 'react-redux'
 
@@ -22,6 +21,9 @@ class Register extends React.Component {
     }
 
     render () {
+        if(this.props.user.id){
+            return <Navigate to="/products"/>
+        }
         return (
             <div>
                 <Container>
@@ -34,6 +36,11 @@ class Register extends React.Component {
                                 <Col></Col>
                                 <Col xs={8}>
                                     <Form>
+                                        {
+                                            this.props.user.errMsg ?
+                                            <div className='alert alert-danger'>{this.props.user.errMsg}</div>
+                                            : null
+                                        }
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Fullname</Form.Label>
                                             <Form.Control onChange={this.inputHandler} name="fullname" type="fullname" placeholder="Enter your fullname" />
@@ -70,12 +77,14 @@ class Register extends React.Component {
     }
 }
 
-const mapStateToProps = () => {
-    return {};
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    };
 }
 
 const mapDispatchToProps = {
     registerUser
 }
 
-export default connect(null,mapDispatchToProps)(Register);
+export default connect(mapStateToProps,mapDispatchToProps)(Register);

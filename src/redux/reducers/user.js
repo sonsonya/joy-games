@@ -10,6 +10,8 @@ const init_state = {
 
 const reducer = (state = init_state, action) => {
     switch (action.type) {
+        case "USER_EMAIL_FAILED":
+            return { ...state, errMsg: action.payload}
         case "USER_LOGIN":
             return { ...state, ...action.payload, storageIsChecked: true}
         case "USER_ERROR":

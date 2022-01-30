@@ -11,13 +11,16 @@ class Products extends React.Component {
         filteredBy: [],
         searchInput: "",
         selectCategoryInput: "0",
-        sortBy: ""
+        sortBy: "",
+        page: 1,
+        itemPerPage: 8,
+        maxPage: 1
     }
 
     fetchProducts = () => {
         Axios.get(`${API_URL}/products`)
         .then((result) => {
-            this.setState({ products: result.data, filteredBy: result.data })
+            this.setState({ products: result.data, filteredBy: result.data, maxPage: Math.ceil(result.data.length / this.state.itemPerPage) })
         })
         .catch(() => {
             alert("Terjadi kesalahan di server")
@@ -32,11 +35,40 @@ class Products extends React.Component {
     }
 
     submitHandler = () => {
-        const filteredBy = this.state.filteredBy.filter((val)=> {
-            return val.category.includes(this.state.selectCategoryInput) && val.name.toLowerCase().includes(this.state.searchInput.toLowerCase())
+        const filteredBy = this.state.products.filter((val)=> {
+            return  val.name.toLowerCase().includes(this.state.searchInput.toLowerCase()) && val.category.includes(this.state.selectCategoryInput)
         })
 
-        this.setState({ filteredBy })
+        this.setState({ filteredBy , maxPage: Math.ceil(filteredBy.length / this.state.itemPerPage)})
+    }
+
+    categoryHandler = (event) => {
+        const name = event.target.name
+        const value = event.target.value
+
+        this.setState({ [name] : value })
+
+        if(value != ""){
+            const filteredBy = this.state.products.filter((val)=> {
+                return val.category.includes(value)
+            })
+    
+            this.setState({ filteredBy , maxPage: Math.ceil(filteredBy.length / this.state.itemPerPage), page:1})
+        } else {
+            this.setState({ filteredBy: this.state.products, maxPage: Math.ceil(this.state.products.length / this.state.itemPerPage), page:1})
+        }
+    }
+
+    nextPage = () => {
+        if(this.state.page < this.state.maxPage){
+            this.setState({ page: this.state.page + 1})
+        }
+    }
+
+    previousPage = () => {
+        if(this.state.page > 1){
+            this.setState({ page: this.state.page - 1 })
+        }
     }
 
     renderProducts = () => {
@@ -71,9 +103,22 @@ class Products extends React.Component {
                 break;
         }
 
-        // this.setState({ filteredBy:rawData})
+        if(rawData.length === 0){
+            return <Row>
+                <Col></Col>
+                <Col xs={9}>
+                    <div className='alert alert-danger'>
+                        Mohon maaf product <strong>{this.state.searchInput}</strong> pada category <strong>{this.state.selectCategoryInput}</strong> tidak tersedia
+                    </div>
+                </Col>
+                <Col></Col>
+            </Row>
+        }
 
-        return this.state.products.map((val) => {
+        const beginningIndex = (this.state.page - 1) * this.state.itemPerPage
+        const currentData = rawData.slice(beginningIndex, beginningIndex+this.state.itemPerPage)
+
+        return currentData.map((val) => {
             return <ProductCard productData={val} />
         })
     }
@@ -108,8 +153,8 @@ class Products extends React.Component {
                                         <Form.Label>Pilih Kategori</Form.Label>
                                     </Col>
                                     <Col xs="auto">
-                                        <Form.Select onChange={this.selectInputHandler} name="selectCategoryInput">
-                                            <option value="0">Semua Kategori</option>
+                                        <Form.Select onChange={this.categoryHandler} name="selectCategoryInput">
+                                            <option value="">Semua Kategori</option>
                                             <option value="PROPOELIX™">PROPOELIX™</option>
                                             <option value="BEE BOTANICS™">BEE BOTANICS™</option>
                                             <option value="HDI ORIGINS™">HDI ORIGINS™</option>
@@ -135,6 +180,15 @@ class Products extends React.Component {
                                 </Row>
                             </Form>
                             <Row>{this.renderProducts()}</Row>
+                            <Row>
+                            <div className='mt-3'>
+                                <div className='d-flex flex-row justify-content-between align-items-center'>
+                                    <Button disabled={this.state.page === 1} variant="danger" onClick={this.previousPage}>{"<"}</Button>
+                                    <div className="text-center">Page {this.state.page} of {this.state.maxPage}</div>
+                                    <Button disabled={this.state.page === this.state.maxPage}variant="danger" onClick={this.nextPage}>{">"}</Button>
+                                </div>
+                            </div>
+                            </Row>
                         </Col>
                         <Col></Col>
                     </Row>

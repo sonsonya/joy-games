@@ -2,28 +2,34 @@ import Axios from 'axios'
 import {API_URL} from '../../constans/API'
 
 export const registerUser = ({fullname, username, email, password}) => {
-    return (dispatch) => (
-        Axios.post(`${API_URL}/users`, {
-            fullname,
-            username,
-            email,
-            password,
-            role: "user"
-        })
-        .then((result) => {
-            alert("Berhasil mendaftarkan user!")
-            delete result.data.password
-
-            dispatch({
-                type: "USER_LOGIN",
-                payload: result.data
+    if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)){
+        return {
+            type: "USER_EMAIL_FAILED",
+            payload: "Please enter valid email address!"
+        }
+    } else {
+        return (dispatch) => (
+            Axios.post(`${API_URL}/users`, {
+                fullname,
+                username,
+                email,
+                password,
+                role: "user"
             })
-        })
-        .catch(() => {
-            alert("Gagal mendaftarkan user!")
-        })
-        )
+            .then((result) => {
+                alert("Berhasil mendaftarkan user!")
+                delete result.data.password
     
+                dispatch({
+                    type: "USER_LOGIN",
+                    payload: result.data
+                })
+            })
+            .catch(() => {
+                alert("Gagal mendaftarkan user!")
+            })
+        )
+    }
 }
 
 export const loginUser = ({username, password}) => {
@@ -93,6 +99,6 @@ export const keepLogin = (userData) => {
 
 export const checkStorage = () => {
     return {
-        type: "CHECK_STORAGE"
+        type: "CHECK_STORAGE",
     }
 }

@@ -7,6 +7,14 @@
       "email": "sonya@mail.com",
       "password": "sonya",
       "role": "user"
+    },
+    {
+      "fullname": "Mimin Admin",
+      "username": "admin",
+      "email": "admin@mail.com",
+      "password": "mimin",
+      "role": "admiin",
+      "id": 2
     }
   ],
   "products": [
