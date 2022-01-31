@@ -20,7 +20,11 @@ class Login extends React.Component {
 
     render () {
         if(this.props.user.id){
-            return <Navigate to="/products"/>
+            if(this.props.role === 'user'){
+                return <Navigate to="/products"/>
+            } else {
+                return <Navigate to="/admin"/>
+            }
         }
         return (
             <div>

@@ -9,6 +9,7 @@ import { keepLogin, checkStorage } from './redux/actions/user';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import MyNavbar from './components/MyNavbar';
@@ -37,6 +38,7 @@ class App extends React.Component {
             <Route element={<Register/>} path='/register'/>
             <Route element={<Products/>} path='/products'/>
             <Route element={<Contact/>} path='/contact'/>
+            <Route element={<Admin/>} path='/admin'/>
           </Routes>
         </BrowserRouter>
       )
