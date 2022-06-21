@@ -21,9 +21,6 @@ class MyNavbar extends React.Component {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                        </Nav>
-                        <Nav>
                             {
                                 this.props.register.username ?
                                 <>
@@ -42,20 +39,16 @@ class MyNavbar extends React.Component {
                                 </Dropdown>
                                 </> :
                                 <>
-                                <Nav.Link href="">ABOUT</Nav.Link>
-                                <Nav.Link href="">STORE</Nav.Link>
-                                <Nav.Link href="">GAMEBOX</Nav.Link>
-                                <Nav.Link href="">TOKEN</Nav.Link>
-                                <Nav.Link href="">STAKING</Nav.Link>
-                                <Nav.Link href="">DOCS</Nav.Link>
-                                <Nav.Link href="">REGISTER</Nav.Link>
+                                <Nav.Link href="" style={{marginLeft: '91px', margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>ABOUT</Nav.Link>
+                                <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>STORE</Nav.Link>
+                                <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>GAMEBOX</Nav.Link>
+                                <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>TOKEN</Nav.Link>
+                                <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>STAKING</Nav.Link>
+                                <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>DOCS</Nav.Link>
+                                <Nav.Link href="" style={{fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>REGISTER</Nav.Link>
                                 <Button href="/login" style={{width: '158px', backgroundColor: '#5D5FEF',boxShadow: '0px 0px 4px 4px #0bceff4d',borderRadius: '30px'}}>LOGIN</Button>
                                 </>
                             }
-                            
-                        </Nav>
-                        
-                        
                     </Navbar.Collapse>
                     </Container>
                 </Navbar>
