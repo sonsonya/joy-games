@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   render(){
-    if(this.props.user.storageIsChecked) {
+    // if(this.props.user.storageIsChecked) {
       return (
         <BrowserRouter>
         <MyNavbar></MyNavbar>
@@ -42,13 +42,13 @@ class App extends React.Component {
           </Routes>
         </BrowserRouter>
       )
-    }
+    // }
     
-    return (
-      <div>
-        Loading..
-      </div>
-    )
+    // return (
+    //   <div>
+    //     Loading..
+    //   </div>
+    // )
   }
 }
 

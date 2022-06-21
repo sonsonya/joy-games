@@ -48,7 +48,7 @@ class Products extends React.Component {
 
         this.setState({ [name] : value })
 
-        if(value != ""){
+        if(value !== ""){
             const filteredBy = this.state.products.filter((val)=> {
                 return val.category.includes(value)
             })

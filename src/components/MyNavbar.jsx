@@ -8,17 +8,16 @@ class MyNavbar extends React.Component {
     render () {
         return (
             <div>
-                <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{height:'113px'}}>
                     <Container>
                     <Navbar.Brand href="/">
                         <img
-                            src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/3cd22c87-aa06-45cb-95fe-259076163ba6"
-                            width="30"
-                            height="30"
+                            src={require('../assets/images/logo.png')}
+                            width="173px"
+                            height="46.56px"
                             className="d-inline-block align-top"
                             alt="React Bootstrap logo"
-                        />{' '}
-                        HDI
+                        />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -43,9 +42,14 @@ class MyNavbar extends React.Component {
                                 </Dropdown>
                                 </> :
                                 <>
-                                <Nav.Link href="/products">Katalog</Nav.Link>
-                                <Nav.Link href="/contact">Hubungi Kami</Nav.Link>
-                                <Button href="/login" variant="danger">Log In</Button>
+                                <Nav.Link href="">ABOUT</Nav.Link>
+                                <Nav.Link href="">STORE</Nav.Link>
+                                <Nav.Link href="">GAMEBOX</Nav.Link>
+                                <Nav.Link href="">TOKEN</Nav.Link>
+                                <Nav.Link href="">STAKING</Nav.Link>
+                                <Nav.Link href="">DOCS</Nav.Link>
+                                <Nav.Link href="">REGISTER</Nav.Link>
+                                <Button href="/login" style={{width: '158px', backgroundColor: '#5D5FEF',boxShadow: '0px 0px 4px 4px #0bceff4d',borderRadius: '30px'}}>LOGIN</Button>
                                 </>
                             }
                             
