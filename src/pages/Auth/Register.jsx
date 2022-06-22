@@ -25,13 +25,13 @@ class Register extends React.Component {
             return <Navigate to="/products"/>
         }
         return (
-            <div>
-                <Container>
-                    <Row className="justify-content-md-center">
-                        <Col>
-                            <Card.Img variant="top" src="https://fastcdn.benihbaik.com/news/detail/benihbaik_2020-12-11_1607701328713.jpeg"/>
+            <div style={{backgroundColor:'#E5E5E5', height: '100vh'}}>
+                <Container stlye={{padding: '80px 42px'}}>
+                <Row className="col-lg-12">
+                        <Col className="col-lg-6 col-md-12" style={{padding: '70px 0px'}}>
+                        <Card.Img variant="top" src={require("../../assets/images/illustrations.png")}/>
                         </Col>
-                        <Col style={{ margin: '100px 0px'}}>
+                        <Col className="col-lg-6 col-md-12" style={{ margin: '42px 0px', padding: '44px 52px', backgroundColor:'#FFFFFF', boxShadow: '0px 0px 4px #000000cc',borderRadius: '8px'}}>
                             <Row>
                                 <Col></Col>
                                 <Col xs={8}>
@@ -41,6 +41,10 @@ class Register extends React.Component {
                                             <div className='alert alert-danger'>{this.props.user.errMsg}</div>
                                             : null
                                         }
+                                        <div className="text-muted" style={{ fontStyle: 'normal', fontWeight: 400, fontSize: '36px', lineHeight: '135.5%', color: 'black', marginBottom: '50px'}}>
+                                            Welcome To<br></br>
+                                            <span style={{fontWeight: 700,color: '#6358DC'}}>Joy Games</span>
+                                        </div>
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Fullname</Form.Label>
                                             <Form.Control onChange={this.inputHandler} name="fullname" type="fullname" placeholder="Enter your fullname" />
@@ -57,14 +61,12 @@ class Register extends React.Component {
                                             <Form.Label>Password</Form.Label>
                                             <Form.Control onChange={this.inputHandler} name="password" type="password" placeholder="Password" />
                                         </Form.Group>
-                                        <Form.Group>
-                                            <Form.Text className="text-muted">
-                                            Sudah memiliki akun? <a href="/login">Login disini</a>
-                                            </Form.Text>
-                                        </Form.Group>
                                     </Form>
                                     <div className="d-grid gap-2 mt-3">
-                                        <Button variant="danger" type="submit" onClick={()=>this.props.registerUser(this.state)}>Sign In</Button>
+                                        <Button style={{backgroundColor: '#6358DC', height: '45px'}} type="submit" onClick={()=>this.props.registerUser(this.state)}>Sign In</Button>
+                                    </div>
+                                    <div className="text-muted" style={{textAlign: 'center', marginTop: '47px', fontWeight: 400}}>
+                                        Already have an account? <a href="/" style={{color: '#6358DC'}}>Login</a>
                                     </div>
                                 </Col>
                                 <Col></Col>

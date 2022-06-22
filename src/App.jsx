@@ -12,7 +12,6 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
-import MyNavbar from './components/MyNavbar';
 
 class App extends React.Component {
   
@@ -31,10 +30,9 @@ class App extends React.Component {
     // if(this.props.user.storageIsChecked) {
       return (
         <BrowserRouter>
-        <MyNavbar></MyNavbar>
           <Routes>
-            <Route element={<Home/>} path='/'/>
-            <Route element={<Login/>} path='/login'/>
+            <Route element={<Home/>} path='/home'/>
+            <Route element={<Login/>} path='/'/>
             <Route element={<Register/>} path='/register'/>
             <Route element={<Products/>} path='/products'/>
             <Route element={<Contact/>} path='/contact'/>
