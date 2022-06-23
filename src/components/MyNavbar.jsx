@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, Button, Dropdown } from 'react-bootstrap'
 import { logoutUser } from '../redux/actions/user'
 import { connect } from 'react-redux'
 
+
 class MyNavbar extends React.Component {
 
     render () {
@@ -45,8 +46,8 @@ class MyNavbar extends React.Component {
                                 <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>TOKEN</Nav.Link>
                                 <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>STAKING</Nav.Link>
                                 <Nav.Link href="" style={{margin: 'auto',fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>DOCS</Nav.Link>
-                                <Nav.Link href="" style={{fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>REGISTER</Nav.Link>
-                                <Button href="/login" style={{width: '158px', backgroundColor: '#5D5FEF',boxShadow: '0px 0px 4px 4px #0bceff4d',borderRadius: '30px'}}>LOGIN</Button>
+                                <Nav.Link href="/register" style={{fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: 700, fontSize: '18px', lineHeight: '22px', color: '#FFFFFF'}}>REGISTER</Nav.Link>
+                                <Button href="/" style={{width: '158px', backgroundColor: '#5D5FEF',boxShadow: '0px 0px 4px 4px #0bceff4d',borderRadius: '30px'}}>LOGIN</Button>
                                 </>
                             }
                     </Navbar.Collapse>

@@ -19,12 +19,8 @@ class Login extends React.Component {
     }
 
     render () {
-        if(this.props.user.id){
-            if(this.props.role === 'user'){
-                return <Navigate to="/products"/>
-            } else {
-                return <Navigate to="/admin"/>
-            }
+        if(this.props.user.success === true){
+            return <Navigate to="/home"/>
         }
         return (
             <div style={{backgroundColor:'#E5E5E5', height: '100vh'}}>

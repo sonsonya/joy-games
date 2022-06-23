@@ -7,10 +7,10 @@ import { connect } from 'react-redux'
 class Register extends React.Component {
 
     state = {
-        fullname: "",
-        username: "",
+        name: "",
         email: "",
-        password: ""
+        password: "",
+        password_confirmation: ""
     }
 
     inputHandler = (event) => {
@@ -21,8 +21,9 @@ class Register extends React.Component {
     }
 
     render () {
-        if(this.props.user.id){
-            return <Navigate to="/products"/>
+        console.log(this.props.user)
+        if(this.props.user.success === true){
+            return <Navigate to="/"/>
         }
         return (
             <div style={{backgroundColor:'#E5E5E5', height: '100vh'}}>
@@ -36,22 +37,18 @@ class Register extends React.Component {
                                 <Col></Col>
                                 <Col xs={8}>
                                     <Form>
+                                        <div className="text-muted" style={{ fontStyle: 'normal', fontWeight: 400, fontSize: '36px', lineHeight: '135.5%', color: 'black', marginBottom: '50px'}}>
+                                            Welcome To<br></br>
+                                            <span style={{fontWeight: 700,color: '#6358DC'}}>Joy Games</span>
+                                        </div>
                                         {
                                             this.props.user.errMsg ?
                                             <div className='alert alert-danger'>{this.props.user.errMsg}</div>
                                             : null
                                         }
-                                        <div className="text-muted" style={{ fontStyle: 'normal', fontWeight: 400, fontSize: '36px', lineHeight: '135.5%', color: 'black', marginBottom: '50px'}}>
-                                            Welcome To<br></br>
-                                            <span style={{fontWeight: 700,color: '#6358DC'}}>Joy Games</span>
-                                        </div>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Form.Label>Fullname</Form.Label>
-                                            <Form.Control onChange={this.inputHandler} name="fullname" type="fullname" placeholder="Enter your fullname" />
-                                        </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Username</Form.Label>
-                                            <Form.Control onChange={this.inputHandler} name="username" type="username" placeholder="Enter your username" />
+                                            <Form.Control onChange={this.inputHandler} name="name" type="name" placeholder="Enter your username" />
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Email address</Form.Label>
@@ -60,6 +57,10 @@ class Register extends React.Component {
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
                                             <Form.Label>Password</Form.Label>
                                             <Form.Control onChange={this.inputHandler} name="password" type="password" placeholder="Password" />
+                                        </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Label>Confirm Password</Form.Label>
+                                            <Form.Control onChange={this.inputHandler} name="password_confirmation" type="password" placeholder="Confirm Password" />
                                         </Form.Group>
                                     </Form>
                                     <div className="d-grid gap-2 mt-3">
