@@ -7,23 +7,22 @@ import News from '../components/News';
 import Investor from '../components/Investor';
 import Footer from '../components/Footer';
 import MyNavbar from '../components/MyNavbar';
+import { observer } from 'mobx-react';
 
-class Home extends React.Component {
-    render () {
-        return (
-            <div>
-                <MyNavbar/>
-               <MainScreen/>
-               <Stakeholder/>
-               <Video/>
-               <Upcoming/>
-               <News/>
-               <Investor/>
-               <Footer/>
-            </div>
-        )
-    }
-}
+const Home = observer(() => {
+    return (
+        <div>
+           <MyNavbar/>
+           <MainScreen/>
+           <Stakeholder/>
+           <Video/>
+           <Upcoming/>
+           <News/>
+           <Investor/>
+           <Footer/>
+        </div>
+    )
+})
 
 
 export default Home;
